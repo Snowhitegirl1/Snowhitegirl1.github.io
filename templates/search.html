@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results for {{ term }}</title>
+</head>
+<body>
+    <a href="/">&larr; Back to Search</a>
+    <h1>Search results for: {{ term }}</h1>
+    <h3>Found {{ total_jobs }} jobs</h3>
+
+    <div class="job-list">
+        {% for job in jobs %}
+            <hr>
+            <div>
+                <h4>{{ job.title }}</h4>
+                <h5>{{ job.company }}</h5>
+                <p>Source: {{ job.site }}</p>
+                <a href="{{ job.link }}" target="_blank">View Job &rarr;</a>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
